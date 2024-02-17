@@ -3,15 +3,18 @@
   Доповніть цю функцію, використовуючи generics, щоб вона повертала правильний тип.
 */
 
-function getPromise () {
-  return new Promise((resolve) => {
-    resolve(['Text', 50]);
+type strOrNumArrType = (string | number)[];
+
+function getPromise(): Promise<strOrNumArrType> {
+  return new Promise<strOrNumArrType>((resolve) => {
+    resolve(["Text", 50]);
   });
 }
 
-getPromise()
-.then((data) => {
+getPromise().then((data) => {
   console.log(data);
 });
 
 export {};
+
+// type TupleType = [string, number];
